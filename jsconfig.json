@@ -4,7 +4,9 @@
     "paths": {
       "@/components/*": ["components/*"],
       "@/lib/*": ["lib/*"],
+      "@/utils/*": ["utils/*"],
       "@/styles/*": ["styles/*"]
     }
-  }
+  },
+  "exclude": ["node_modules"]
 }
