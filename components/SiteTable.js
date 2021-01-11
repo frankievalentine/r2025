@@ -3,6 +3,7 @@ import NextLink from 'next/link';
 import { Box, Link } from '@chakra-ui/core';
 import { parseISO, format } from 'date-fns';
 import { Table, Tr, Th, Td } from './Table';
+
 const SiteTable = ({ sites }) => {
   return (
     <Box overflowX="scroll">
@@ -18,7 +19,7 @@ const SiteTable = ({ sites }) => {
         </thead>
         <tbody>
           {sites.map((site) => (
-            <Box as="tr" key={site.id}>
+            <Box as="tr" key={site.url}>
               <Td fontWeight="medium">{site.name}</Td>
               <Td>
                 <Link href={site.url} isExternal>
@@ -40,4 +41,5 @@ const SiteTable = ({ sites }) => {
     </Box>
   );
 };
+
 export default SiteTable;

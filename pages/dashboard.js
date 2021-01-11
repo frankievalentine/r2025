@@ -11,8 +11,6 @@ const Dashboard = () => {
   const { data } = useSWR('/api/sites', fetcher);
   const sites = data?.sites;
 
-  console.log(data);
-
   if (!data) {
     return (
       <DashboardShell>
