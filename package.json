@@ -15,10 +15,14 @@
     "emotion-theming": "10.0.27",
     "firebase": "^8.2.2",
     "firebase-admin": "^9.4.2",
+    "js-cookie": "2.2.1",
     "next": "9.5.1",
     "react": "16.13.0",
     "react-dom": "16.13.0",
     "react-hook-form": "5.7.2",
     "swr": "0.3.0"
+  },
+  "resolutions": {
+    "body-scroll-lock": "3.0.3"
   }
 }

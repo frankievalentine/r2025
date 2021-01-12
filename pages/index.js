@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { Button, Icon, Flex } from '@chakra-ui/core';
 
 import { useAuth } from '@/lib/auth';
@@ -13,6 +14,18 @@ const Home = () => {
       justify="center"
       h="100vh"
     >
+      <Head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+        if (document.cookie && document.cookie.includes('fast-feedback-auth')) {
+          window.location.href = "/dashboard"
+        }
+        `
+          }}
+        />
+        <title>Fast Feedback</title>
+      </Head>
       <Icon color="black" size="64px" name="logo" />
       {auth.user ? (
         <Button onClick={(e) => auth.signout()}>Sign Out</Button>
