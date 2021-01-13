@@ -6,7 +6,7 @@ import { Table, Tr, Th, Td } from './Table';
 
 const SiteTable = ({ sites }) => {
   return (
-    <Box overflowX="scroll">
+    <Box>
       <Table w="full">
         <thead>
           <Tr>
