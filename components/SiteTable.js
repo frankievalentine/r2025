@@ -6,7 +6,7 @@ import { Table, Tr, Th, Td } from './Table';
 
 const SiteTable = ({ sites }) => {
   return (
-    <Box>
+    <Box overflowX="scroll">
       <Table w="full">
         <thead>
           <Tr>
@@ -20,14 +20,26 @@ const SiteTable = ({ sites }) => {
         <tbody>
           {sites.map((site) => (
             <Box as="tr" key={site.url}>
-              <Td fontWeight="medium">{site.name}</Td>
+              <Td>
+                <NextLink
+                  href="/site/[siteId]"
+                  as={`/site/${site.id}`}
+                  passHref
+                >
+                  <Link fontWeight="medium">{site.name}</Link>
+                </NextLink>
+              </Td>
               <Td>
                 <Link href={site.url} isExternal>
                   {site.url}
                 </Link>
               </Td>
               <Td>
-                <NextLink href="/p/[siteId]" as={`/p/${site.id}`} passHref>
+                <NextLink
+                  href="/feedback/[siteId]"
+                  as={`/feedback/${site.id}`}
+                  passHref
+                >
                   <Link color="blue.500" fontWeight="medium">
                     View Feedback
                   </Link>

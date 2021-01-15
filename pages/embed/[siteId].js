@@ -58,23 +58,23 @@ const SiteFeedback = ({ initialFeedback }) => {
   };
 
   return (
-    <Box
-      display="flex"
-      flexDirection="column"
-      width="full"
-      maxWidth="700px"
-      margin="0 auto"
-    >
+    <Box display="flex" flexDirection="column" width="full">
       <Box as="form" onSubmit={onSubmit}>
-        <FormControl my={8}>
+        <FormControl mb={8}>
           <FormLabel htmlFor="comment">Comment</FormLabel>
           <Input ref={inputEl} type="comment" id="comment" />
           <Button
-            mt={2}
             type="submit"
-            color="gray.900"
-            fontWeight="medium"
             isDisabled={router.isFallback}
+            color="white"
+            backgroundColor="gray.900"
+            fontWeight="medium"
+            mt={4}
+            _hover={{ bg: 'gray.700' }}
+            _active={{
+              bg: 'gray.800',
+              transform: 'scale(0.95)'
+            }}
           >
             Add Comment
           </Button>

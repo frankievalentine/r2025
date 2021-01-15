@@ -14,7 +14,7 @@ import {
 import { deleteFeedback } from '@/lib/db';
 import { useAuth } from '@/lib/auth';
 
-const RemoveButton = ({ feedbackId }) => {
+const DeleteFeedbackButton = ({ feedbackId }) => {
   const [isOpen, setIsOpen] = useState();
   const cancelRef = useRef();
   const auth = useAuth();
@@ -22,17 +22,7 @@ const RemoveButton = ({ feedbackId }) => {
   const onClose = () => setIsOpen(false);
   const onDelete = () => {
     deleteFeedback(feedbackId);
-    mutate(
-      ['/api/feedback', auth.user.token],
-      async (data) => {
-        return {
-          feedback: data.feedback.filter(
-            (feedback) => feedback.id !== feedbackId
-          )
-        };
-      },
-      false
-    );
+    mutate(['/api/feedback', auth.user.token]);
     onClose();
   };
   return (
@@ -73,4 +63,4 @@ const RemoveButton = ({ feedbackId }) => {
   );
 };
 
-export default RemoveButton;
+export default DeleteFeedbackButton;
