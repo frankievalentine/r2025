@@ -5,7 +5,7 @@ import { format, parseISO } from 'date-fns';
 const Feedback = ({ author, text, createdAt }) => {
   return (
     <Box>
-      <Heading borderRadius={4} maxWidth="700px" w="full">
+      <Heading size="sm" borderRadius={4} maxWidth="700px" w="full">
         {author}
       </Heading>
       <Text color="gray.500" mb={4} fontSize="xs">
